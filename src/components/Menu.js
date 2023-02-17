@@ -3,9 +3,12 @@ import { useEffect, useState } from "react";
 import { CDN_IMG_URL } from "../utils/constants";
 import MenuCards from "./MenuCards";
 import Skeleton from "react-loading-skeleton";
+import { ShimmerMenu } from "./Shimmer";
 const getFilteredData = (text, data) => {
-  return data.filter(single => single.name.toLowerCase().includes(text.toLowerCase()))
-} 
+  return data.filter((single) =>
+    single.name.toLowerCase().includes(text.toLowerCase())
+  );
+};
 const Menu = () => {
   const [searchText, setSearchText] = useState("");
   const [restaurant, setRestaurantData] = useState([]);
@@ -26,15 +29,13 @@ const Menu = () => {
       setRestaurantData(json.data);
       setMenu(toArrayFromObj);
       setFilteredMenu(toArrayFromObj);
-      console.log(filteredMenu);
-      console.log(restaurant);
     } catch (e) {
       console.log(e);
     }
   };
   const handleClick = () => {
     const filData = getFilteredData(searchText, menu);
-    setFilteredMenu(filData)
+    setFilteredMenu(filData);
   };
   const handleChange = (e) => {
     setSearchText(e.target.value);
@@ -90,11 +91,15 @@ const Menu = () => {
         ></input>
         <button onClick={handleClick}>Search</button>
       </div>
-      <>
-        {filteredMenu.map((single) => {
-          return <MenuCards {...single} key={single.id} />;
-        })}
-      </>
+      {menu?.length === 0 ? (
+        <ShimmerMenu />
+      ) : (
+        <div className="menu-body">
+          {filteredMenu.map((single) => {
+            return <MenuCards {...single} key={single.id} />;
+          })}
+        </div>
+      )}
     </div>
   );
 };

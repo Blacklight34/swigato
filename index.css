@@ -73,7 +73,8 @@ body::-webkit-scrollbar {
     text-decoration: none;
     /* background-color: white; */
 }
-.log-btn{
+
+.log-btn {
     /* border: 2px solid red; */
     height: 30px;
     width: 100px;
@@ -87,7 +88,8 @@ body::-webkit-scrollbar {
     text-decoration: none;
     /* background-color: white; */
 }
-.log-btn:hover{
+
+.log-btn:hover {
     /* border: 2px solid red; */
     /* background-color: white; */
     cursor: pointer;
@@ -275,17 +277,19 @@ body::-webkit-scrollbar {
 
 .menu-body {
     display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: space-around;
 }
 
-.menu-items {
+/* .menu-items {
     padding: 10px 15px;
     font-family: "Space Grotesk";
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-}
+} */
 
 .item-desc>h2 {
     font-size: 1.22rem;
@@ -300,7 +304,8 @@ body::-webkit-scrollbar {
     font-size: 0.8rem;
     opacity: 0.7;
 }
-.form-page{
+
+.form-page {
     /* border: 2px solid red; */
     display: flex;
     justify-content: center;
@@ -308,20 +313,23 @@ body::-webkit-scrollbar {
     align-items: center;
     flex-direction: column;
 }
-.items-headings{
+
+.items-headings {
     font-family: "Space Grotesk";
     font-size: 50px;
 }
-.form-page> input{
+
+.form-page>input {
     font-family: "Space Grotesk";
     margin-bottom: 25px;
     height: 50px;
     width: 500px;
     border-radius: 10px;
-    border:1px solid grey;
+    border: 1px solid grey;
     padding: 20px;
 }
-.form-page > button{
+
+.form-page>button {
     height: 30px;
     width: 200px;
     border-radius: 10px;
@@ -330,17 +338,20 @@ body::-webkit-scrollbar {
     font-family: "Space Grotesk";
     /* transition: all 1s ease; */
 }
+
 @keyframes bgtrans {
-    from{
+    from {
         background: black
     }
-    to{
+
+    to {
         background: linear-gradient(45deg, red, yellow, orange);
         font-size: 20px;
         color: black
     }
 }
-.form-page > a > button:hover{
+
+.form-page>a>button:hover {
     animation: bgtrans 0.6s ease-out forwards
 }
 
@@ -348,21 +359,23 @@ body::-webkit-scrollbar {
 
 
 /* Shimmer */
-.shimmer-card{
+.shimmer-card {
     height: 300px;
     width: 250px;
-    margin:20px;
+    margin: 20px;
     /* background-color: grey; */
     padding: 20px 20px 0px 20px;
     /* animation: name duration timing-function delay iteration-count direction fill-mode; */
 }
-.shimmer-img{
+
+.shimmer-img {
     width: 200px;
     height: 100px;
-    background:linear-gradient(to right, #f6f7f8 0%, #edeef1 20%, #f6f7f8 40%, #f6f7f8 100%);
+    background: linear-gradient(to right, #f6f7f8 0%, #edeef1 20%, #f6f7f8 40%, #f6f7f8 100%);
     animation: placeholderShimmer 2s linear forwards infinite;
 }
-.shimmer-name{
+
+.shimmer-name {
     width: 100px;
     height: 20px;
     margin-top: 10px;
@@ -370,16 +383,18 @@ body::-webkit-scrollbar {
     animation: placeholderShimmer 2s linear forwards infinite;
 
 }
-.shimmer-opaque-text{
+
+.shimmer-opaque-text {
     height: 50px;
     width: 200px;
     /* border: 1px solid green;*/
-    background: linear-gradient(to right, #f6f7f8 0%, #edeef1 20%, #f6f7f8 40%, #f6f7f8 100%);;
+    background: linear-gradient(to right, #f6f7f8 0%, #edeef1 20%, #f6f7f8 40%, #f6f7f8 100%);
     margin-top: 10px;
     animation: placeholderShimmer 2s linear forwards infinite;
 
 }
-.shimmer-info{
+
+.shimmer-info {
     height: 30px;
     width: 200px;
     margin-top: 10px;
@@ -388,12 +403,67 @@ body::-webkit-scrollbar {
     animation: placeholderShimmer 2s linear forwards infinite;
 
 }
+
 @keyframes placeholderShimmer {
     0% {
-      background-position: -468px 0;
+        background-position: -468px 0;
     }
-    
+
     100% {
-      background-position: 468px 0; 
+        background-position: 468px 0;
     }
-  }
+}
+
+/* Shimmer Menu */
+.shimmer-menu-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    /* background-color: grey; */
+}
+
+.shimmer-menu-card {
+    border-bottom: 1px solid grey;
+    animation: placeholderShimmer 2s linear forwards infinite;
+    /* background-color: grey; */
+    height: min-content;
+    padding: 20px;
+    width: 600px;
+    height: 250px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.shimmer-item-desc>h2 {
+
+    width: 90px;
+    height: 20px;
+    /* border: 1px solid red;
+     */
+    background: linear-gradient(to right, #f6f7f8 0%, #edeef1 20%, #f6f7f8 40%, #f6f7f8 100%);
+    animation: placeholderShimmer 2s linear forwards infinite;
+}
+
+.shimmer-item-desc>p {
+    width: 90px;
+    height: 20px;
+    margin-top: 10px;
+    background: linear-gradient(to right, #f6f7f8 0%, #edeef1 20%, #f6f7f8 40%, #f6f7f8 100%);
+    animation: placeholderShimmer 2s linear forwards infinite;
+}
+
+#shimmer-para {
+    width: 300px;
+    height: 50px;
+    margin-top: 14px;
+    background: linear-gradient(to right, #f6f7f8 0%, #edeef1 20%, #f6f7f8 40%, #f6f7f8 100%);
+    animation: placeholderShimmer 2s linear forwards infinite;
+}
+
+.shimmer-item-img {
+    width: 170px;
+    height: 150px;
+    background: linear-gradient(to right, #f6f7f8 0%, #edeef1 20%, #f6f7f8 40%, #f6f7f8 100%);
+    animation: placeholderShimmer 2s linear forwards infinite;
+}
